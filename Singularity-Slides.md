@@ -183,7 +183,7 @@ You can see that you can now run *Prokka*
 
 # Build from a Docker file (2/3)
 
-Usually has the name `Dockerfile` it is similar to file needed for Singularity.
+Usually has the name `Dockerfile` it is similar to file needed for Singularity. You need to install Docker on your computer (and you need Admin privileges).
 
 ```docker
 # Base image
@@ -210,3 +210,21 @@ scp prokka-1.14.6.tar.gz -i YOUKEY USER@kelvin1.qub.ac.uk
 # convert into Singularity Image
 singularity build prokka-1_14_6.sif docker-archive://prokka-1.14.6.tar.gz
 ```
+
+---
+
+# Repository
+
+* `prokka.def` the above example in __Singularity__
+* `mgkit.def` for a more complex build in Cloud Build
+* `Dockerfile` the equivalent in Docker of `prokka.def`
+* `Singularity-Slides.md` these slides source
+* `Singularity-Slides.pdf` the slides
+
+---
+
+# Some Links
+* (Docker Hub)[https://hub.docker.com/]
+* (Singularity Resources)[https://singularityhub.github.io/]
+* (Cloud Build)[https://cloud.sylabs.io/]
+* (Dockerfile Reference)[https://docs.docker.com/engine/reference/builder/]
