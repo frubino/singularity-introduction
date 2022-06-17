@@ -1,0 +1,13 @@
+Bootstrap: docker
+From: continuumio/miniconda3:latest
+
+%environment
+    export PATH=/opt/conda/envs/prokka/bin:$PATH
+
+%post
+    export PATH=/opt/conda/envs/prokka/bin:$PATH
+    
+    conda create --name prokka -c bioconda -c conda-forge -c defaults prokka==1.14.6
+
+%labels
+    Version v1.14.6
