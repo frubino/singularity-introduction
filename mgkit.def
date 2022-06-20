@@ -1,12 +1,19 @@
 # This works on Cloud Build
+# Starts from a Docker image
 Bootstrap: docker
+# the miniconda3 image
 From: continuumio/miniconda3:latest
 
+# These are set for when the image is `run` or `exec`
 %environment
     export PATH=/opt/conda/envs/mgkit/bin:$PATH
     export CONDA_PREFIX=/opt/conda/envs/mgkit
 
 %post
+    # This writes a file in the image to create the environment later
+    # it is not too many commands, so it can be done as a command line
+    # but just shows that it can be possible to create some files here
+    # if needed
     echo "name: mgkit
 channels:
   - conda-forge
@@ -21,10 +28,14 @@ dependencies:
   - pyvcf
 " > /root/mgkit-env.yml
     
+    # Since %environment does not apply to this section, we set the same environment
+    # variables
     export PATH=/opt/conda/envs/mgkit/bin:$PATH
     export CONDA_PREFIX=/opt/conda/envs/mgkit
     
+    # create the environment from the file we created above
     conda env create --name mgkit -f /root/mgkit-env.yml
+    # These can be reduced in size by making it run one after the other using `;` between commands
     apt update
     apt install -y build-essential
     pip install --prefix=$CONDA_PREFIX git+https://github.com/frubino/mgkit.git@0.6.0
