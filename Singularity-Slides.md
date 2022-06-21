@@ -41,6 +41,10 @@ footer: https://github.com/frubino/singularity-introduction
 
 ---
 
+![bg fit](diagram1.png)
+
+---
+
 **Differences Docker/Singularity (1/2)**
 
 * Docker runs and builds as **_root_**
