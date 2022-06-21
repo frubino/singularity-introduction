@@ -29,6 +29,10 @@ footer: https://github.com/frubino/singularity-introduction
 
 ---
 
+![bg fit](diagram1.png)
+
+---
+
 # Technologies for Containers
 * Docker ![w:64](Moby-logo.png)
     * most used, a lot of information available online
@@ -38,10 +42,6 @@ footer: https://github.com/frubino/singularity-introduction
     * needed to deploy multiple instances, load balance
 * LXC (whole system, shared kernel only)
     * differs in the way that is more similar to a VM
-
----
-
-![bg fit](diagram1.png)
 
 ---
 
@@ -224,11 +224,12 @@ singularity build prokka-1_14_6.sif docker-archive://prokka-1.14.6.tar.gz
 * `Dockerfile` the equivalent in Docker of `prokka.def`
 * `Singularity-Slides.md` these slides source
 * `Singularity-Slides.pdf` the slides
+* `diagram1.md` the diagram source
 
 ---
 
 # Some Links
-* (Docker Hub)[https://hub.docker.com/]
-* (Singularity Resources)[https://singularityhub.github.io/]
-* (Cloud Build)[https://cloud.sylabs.io/]
-* (Dockerfile Reference)[https://docs.docker.com/engine/reference/builder/]
+* [Docker Hub](https://hub.docker.com/)
+* [Singularity Resources](https://singularityhub.github.io/)
+* [Cloud Build](https://cloud.sylabs.io/)
+* [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
